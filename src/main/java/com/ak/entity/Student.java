@@ -9,10 +9,10 @@ import javax.persistence.Table;
 
 @Entity //dodajemy na etapie łaczenia z baza danych Hibernate
 @Table(name="Students")
-public class Student {
+public class Student{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id") //powiazanie pola z klasy z kolumna tabeli = id
 	private Long id;
 	

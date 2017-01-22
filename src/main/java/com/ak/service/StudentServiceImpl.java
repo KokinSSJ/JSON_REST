@@ -3,7 +3,6 @@ package com.ak.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 
 import com.ak.DAO.StudentRepository;
@@ -29,7 +28,7 @@ public class StudentServiceImpl implements StudentService{
 	@Override
 	public Student getStudentById(Long id) {
 		//tutaj mozna dac dodatkowa logike biznesowa ->
-		return studentRepository.getOne(id);
+		return studentRepository.findOne(id);
 	}
 
 	@Override
