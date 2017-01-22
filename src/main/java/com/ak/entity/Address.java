@@ -2,15 +2,19 @@ package com.ak.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity //dodajemy na etapie łaczenia z baza danych Hibernate
-@Table(name="Address")
+@Table(name="Addresses")
 public class Address {
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	private Long id;
+	private Long id = Long.MAX_VALUE;
 	
 	@Column(name="street")
 	private String street;

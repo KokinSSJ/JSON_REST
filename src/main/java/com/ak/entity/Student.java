@@ -1,10 +1,17 @@
 package com.ak.entity;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity //dodajemy na etapie łaczenia z baza danych Hibernate
@@ -25,11 +32,28 @@ public class Student{
 	@Column(name="course")
 	private String course;
 	
+	@OneToOne
+	@JoinColumn(name = "address_id")
+	private Address address;
+	
+	
+	@OneToMany(mappedBy="student") //nazwa pola klasy Student w klasie Book
+	private List<Book> book;
+	
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	//musi być pusty konstruktor żeby potem mógł działać dodowanie nowego studenta - funkcja POST!
 	public Student(){
 		
 	}
 	
+	//ta klasa jest potrzebna tylko do sztywnego dodawnaia -> nie potzrebna hibernatowis
 	public Student(String name, String surname, Long id, String course) {
 		super();
 		this.name = name;
