@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Student{
 	
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id") //powiazanie pola z klasy z kolumna tabeli = id
 	private Long id;
 	
