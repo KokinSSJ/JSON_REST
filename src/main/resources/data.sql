@@ -11,8 +11,16 @@ insert into Students(id, name, surname, course, address_id) values (2, 'Dom2', '
 insert into Books (id, title, author, student_id) values (1, 'walenrod', 'brzeczyk', 1);
 insert into Books (id, title, author, student_id) values (2, 'druga ksiazka2', 'author', 1);
 
+insert into Courses (title, hour_time) values ('ang', 10);
+insert into Courses (title, hour_time) values ('java', 200);
+insert into Courses (title, hour_time) values ('niem', 104);
+insert into Courses (title, hour_time) values ('html', 10);
 
 
+insert into Students_Courses (student_id, course_id) values (1, 2);
+insert into Students_Courses (student_id, course_id) values (1,3);
+insert into Students_Courses (student_id, course_id) values(1, 4);
 
+insert into Students_Courses (student_id, course_id) values(2, 1);
 
 

@@ -23,6 +23,17 @@ CREATE TABLE Books (
 	foreign key (student_id) references Students(id)
 	
 );
+
+CREATE TABLE Courses(
+	id bigint primary key auto_increment,
+	title varchar(40) not null,
+	hour_time int not null
+);
+
+CREATE TABLE Students_Courses(
+	student_id bigint,
+	course_id bigint
+);
 	
 
 

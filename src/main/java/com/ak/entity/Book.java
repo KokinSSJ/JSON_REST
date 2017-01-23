@@ -56,9 +56,8 @@ public class Book {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 	public Book() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 }
