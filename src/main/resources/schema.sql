@@ -4,14 +4,18 @@ CREATE TABLE Addresses(
 	city varchar(40) not null,
 	);
 	
-	CREATE TABLE Students(
+CREATE TABLE Persons(
 	id int primary key auto_increment,
     name varchar(50) not null,
     surname varchar(50) not null,
-    course varchar(50) not null,
     address_id bigint unique not null,
     phone_number int,
     email varchar(40),
+    person_type varchar(30) not null,
+    year int,
+    degree varchar(30),
+    salary int,
+    
     
 	foreign key (address_id) references Addresses(id)
     );
@@ -20,9 +24,9 @@ CREATE TABLE Books (
 	id bigint primary key auto_increment,
 	title varchar(40) not null,
 	author varchar(40) not null,
-	student_id int,
+	person_id int,
 	
-	foreign key (student_id) references Students(id)
+	foreign key (person_id) references Persons(id)
 	
 );
 
@@ -32,11 +36,11 @@ CREATE TABLE Courses(
 	hour_time int not null
 );
 
-CREATE TABLE Students_Courses(
-	student_id bigint,
+CREATE TABLE Persons_Courses(
+	person_id bigint,
 	course_id bigint,
 	
-	foreign key (student_id) references Students(id),
+	foreign key (person_id) references Persons(id),
 	foreign key (course_id) references Courses(id)
 );
 	

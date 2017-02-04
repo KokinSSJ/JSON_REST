@@ -28,15 +28,16 @@ public class Book {
 	
 	@JsonIgnore // nie zostanie dodana wstawka json'owa odnosnie studenta -> bo tak to by sie zapetlilo
 	@ManyToOne //bo wiele ksiazek może posiadać jeden student 
-	@JoinColumn(name = "student_id") //student_id to nazwa klucza obcego w tab.books
-	private Student student;
+	@JoinColumn(name = "person_id") //student_id to nazwa klucza obcego w tab.books
+	private Person person;
 	
 	
-	public Student getStudent() {
-		return student;
+
+	public Person getPerson() {
+		return person;
 	}
-	public void setStudent(Student student) {
-		this.student = student;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 	public String getAuthor() {
 		return author;

@@ -11,50 +11,52 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ak.entity.Person;
 import com.ak.entity.Student;
-import com.ak.service.StudentService;
+import com.ak.service.PersonService;
+
 
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/person")
 
-public class StudentController {
+public class PersonController {
 
 	@Autowired
-	private StudentService studentService;
+	private PersonService personService;
 	
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Collection<Student> getAllStudents(){
+	public Collection<Person> getAllPersons(){
 		System.out.println("GET");
-		return studentService.getAllStudents();
+		return personService.getAllPersons();
 	}
 	
 	//http://127.0.0.1/students?id=1
 	//read
 	@RequestMapping(method=RequestMethod.GET, value ="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Student getStudentById(@PathVariable Long id){
+	public Person getPersonById(@PathVariable Long id){
 		System.out.println("GET - id " + id);
-		return studentService.getStudentById(id);
+		return personService.getPersonById(id);
 	}
 	
 	//delete
 	@RequestMapping(method=RequestMethod.DELETE, value ="/{id}")
-	public void deleteStudentById(@PathVariable Long id){
+	public void deletePersonById(@PathVariable Long id){
 		System.out.println("DELETE - id " + id);
-		studentService.deletStudentById(id);
+		personService.deletPersonById(id);
 	}
 	
 	//add, create
 	@RequestMapping(method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void addStudent(@RequestBody Student student){
+	public void addPerson(@RequestBody Person person){
 		System.out.println("POST");
-		studentService.addStudent(student);
+		personService.addPerson(person);
 	}
 	
 	//update
 	@RequestMapping(method=RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void updateStudent(@RequestBody Student student) {
+	public void updatePerson(@RequestBody Person person) {
 		System.out.println("PUT");
-		studentService.updateStudent(student);
+		personService.updatePerson(person);
 		
 	}
 	
