@@ -22,19 +22,21 @@ public class Course {
 	@Column(name = "hour_time")
 	private String hourTime;
 
-	// tego nie ma w ManyToMany!
-	// @ManyToMany(cascade=CascadeType.ALL)
-	// private Set<Student> student = new HashSet<>();
-	//
-	// public Set<Student> getStudent() {
-	// return student;
-	// }
-	//
-	//
-	//
-	// public void setStudent(Set<Student> student) {
-	// this.student = student;
-	// }
+////	 tego nie ma w ManyToMany!
+//	 @ManyToMany(cascade=CascadeType.ALL)
+////	 @JsonIgnore
+//	 @JoinTable(name="Students_Courses", joinColumns=@JoinColumn(name="course_id"), inverseJoinColumns=@JoinColumn(name="student_id"))
+//	 private Set<Student> student ;//= new HashSet<>();
+//	
+//	 public Set<Student> getStudent() {
+//	 return student;
+//	 }
+//	
+//	
+//	
+//	 public void setStudent(Set<Student> student) {
+//	 this.student = student;
+//	 }
 
 	public Course() {
 

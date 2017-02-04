@@ -10,6 +10,8 @@ CREATE TABLE Addresses(
     surname varchar(50) not null,
     course varchar(50) not null,
     address_id bigint unique not null,
+    phone_number int,
+    email varchar(40),
     
 	foreign key (address_id) references Addresses(id)
     );
@@ -32,7 +34,10 @@ CREATE TABLE Courses(
 
 CREATE TABLE Students_Courses(
 	student_id bigint,
-	course_id bigint
+	course_id bigint,
+	
+	foreign key (student_id) references Students(id),
+	foreign key (course_id) references Courses(id)
 );
 	
 

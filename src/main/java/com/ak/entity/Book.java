@@ -27,7 +27,7 @@ public class Book {
 	private String author;
 	
 	@JsonIgnore // nie zostanie dodana wstawka json'owa odnosnie studenta -> bo tak to by sie zapetlilo
-	@ManyToOne
+	@ManyToOne //bo wiele ksiazek może posiadać jeden student 
 	@JoinColumn(name = "student_id") //student_id to nazwa klucza obcego w tab.books
 	private Student student;
 	
