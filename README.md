@@ -14,5 +14,4 @@ Technologies:
 1. Java EE
 2. Spring Boot
 3. JPA/Hibernate
-4. Mockito -> TEST
-5. MySQL
+4. MySQL
